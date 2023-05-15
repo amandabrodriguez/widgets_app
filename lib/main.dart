@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:widgets_app/presentation/screens/buttons/button_screen.dart';
+import 'package:widgets_app/presentation/screens/cards/cards_screen.dart';
 import 'package:widgets_app/presentation/screens/home/home_screen.dart';
 
 import 'config/theme/app_theme.dart';
@@ -13,6 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppTheme(selectedColor: 5).getTheme(),
       title: 'Material App',
+      routes: {
+        '/buttons': (context) => const ButtonsScreen(),
+        '/cards': (context) => const CardsScreen(),
+      },
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Material App Bar'),
