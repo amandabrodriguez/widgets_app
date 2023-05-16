@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: appRouter,
       theme: AppTheme(selectedColor: 0).getTheme(),
-      title: 'Material App',
+      title: 'Flutter Widgets',
     );
   }
 }
