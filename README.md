@@ -1,6 +1,6 @@
 # widgets_app
 
-A flutter project resulting from the sections 9 and 10 of Fernando Herrera's course through the Udemy platform. (https://www.udemy.com/share/108tCU3@EyonltxxXxMBRczlsE3puFFwqi07frHo8YKd8o5DfI2OnKUIJxepru1DmK8cx2D5Zw==/)
+A flutter project resulting from the sections 9, 10 and 11 of Fernando Herrera's course through the Udemy platform. (https://www.udemy.com/share/108tCU3@EyonltxxXxMBRczlsE3puFFwqi07frHo8YKd8o5DfI2OnKUIJxepru1DmK8cx2D5Zw==/)
 
 ## Getting Started
 Elements and widgets are used such as: 
@@ -17,7 +17,7 @@ Routes:
     paths
     router configurations:
         Own
-        from third parties
+        From third parties
 RefreshIndicator
 InfiniteScroll
 Progress Indicators
@@ -34,3 +34,5 @@ Radios
 Tiles
 Lists
 Pageviews
+Drawer
+Riverpod
