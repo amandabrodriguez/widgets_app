@@ -11,7 +11,7 @@ class ButtonsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Buttons Screen'),
       ),
-      body: _ButtonsView(),
+      body: const _ButtonsView(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.pop();
@@ -39,7 +39,9 @@ class _ButtonsView extends StatelessWidget {
           children: [
             ElevatedButton(onPressed: () {}, child: const Text('Elevated')),
             const ElevatedButton(
-                onPressed: null, child: Text('Elevated Disabled')),
+              onPressed: null,
+              child: Text('Elevated Disabled'),
+            ),
             ElevatedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.access_alarm_rounded),
@@ -70,8 +72,8 @@ class _ButtonsView extends StatelessWidget {
               onPressed: () {},
               icon: const Icon(Icons.app_registration_rounded),
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(colors.primary),
-                iconColor: const MaterialStatePropertyAll(Colors.white),
+                backgroundColor: WidgetStatePropertyAll<Color?>(colors.primary),
+                iconColor: const WidgetStatePropertyAll<Color?>(Colors.white),
               ),
             ),
             const CustomButton(),
@@ -95,13 +97,9 @@ class CustomButton extends StatelessWidget {
         color: colors.primary,
         child: InkWell(
           onTap: () {},
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-            child: const Text(
-              'Hola mundo',
-              style: TextStyle(color: Colors.white),
-            ),
+          child: const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+            child: Text('Hola mundo', style: TextStyle(color: Colors.white)),
           ),
         ),
       ),

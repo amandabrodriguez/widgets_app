@@ -31,7 +31,7 @@ class _UIControlsView extends StatefulWidget {
 }
 
 class _UIControlsViewState extends State<_UIControlsView> {
-  bool switchValue = false;
+  bool switchValue = true;
   Transportation selectedTransportation = Transportation.car;
   bool wantsBreakfast = false;
   bool wantsLunch = false;

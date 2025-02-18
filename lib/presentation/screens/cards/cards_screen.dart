@@ -33,14 +33,22 @@ class _CardsView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          ...cards.map((card) =>
-              _CardType1(elevation: card['elevation'], label: card['label'])),
-          ...cards.map((card) =>
-              _CardType2(elevation: card['elevation'], label: card['label'])),
-          ...cards.map((card) =>
-              _CardType3(elevation: card['elevation'], label: card['label'])),
-          ...cards.map((card) =>
-              _CardType4(elevation: card['elevation'], label: card['label'])),
+          ...cards.map(
+            (card) =>
+                _CardType1(elevation: card['elevation'], label: card['label']),
+          ),
+          ...cards.map(
+            (card) =>
+                _CardType2(elevation: card['elevation'], label: card['label']),
+          ),
+          ...cards.map(
+            (card) =>
+                _CardType3(elevation: card['elevation'], label: card['label']),
+          ),
+          ...cards.map(
+            (card) =>
+                _CardType4(elevation: card['elevation'], label: card['label']),
+          ),
           const SizedBox(height: 50),
         ],
       ),
@@ -131,7 +139,7 @@ class _CardType3 extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return Card(
-      color: colors.surfaceVariant,
+      color: colors.surfaceContainerHighest,
       elevation: elevation,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
@@ -172,6 +180,26 @@ class _CardType4 extends StatelessWidget {
             'https://picsum.photos/id/${elevation.toInt()}/600/350',
             height: 350,
             fit: BoxFit.cover,
+          ),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.5),
+                borderRadius: const BorderRadius.only(
+                  topRight: Radius.circular(20.0),
+                ),
+              ),
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
           ),
           Align(
             alignment: Alignment.topRight,

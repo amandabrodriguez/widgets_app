@@ -48,6 +48,7 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
           strokeWidth: 2,
           onRefresh: onRefresh,
           child: ListView.builder(
+            controller: scrollController,
             physics: const BouncingScrollPhysics(),
             itemCount: imagesIds.length,
             itemBuilder: (context, index) {
@@ -58,7 +59,7 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
                   placeholder:
                       const AssetImage('assets/images/jar-loading.gif'),
                   image: NetworkImage(
-                      'https://picsum.photos/id/${imagesIds[index]}/200/300'));
+                      'https://picsum.photos/id/${imagesIds[index]}/500/300'));
             },
           ),
         ),
@@ -108,8 +109,10 @@ class _InfiniteScrollScreenState extends State<InfiniteScrollScreen> {
   void moveScrollToBottom() {
     if (scrollController.position.pixels + 100 <=
         scrollController.position.maxScrollExtent) return;
-    scrollController.animateTo(scrollController.position.pixels + 120,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.fastOutSlowIn);
+    scrollController.animateTo(
+      scrollController.position.pixels + 120,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.fastOutSlowIn,
+    );
   }
 }
